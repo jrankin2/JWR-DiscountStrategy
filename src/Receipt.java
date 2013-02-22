@@ -10,12 +10,12 @@ public class Receipt {
         setLineItems(new LineItem[0]);//pass in an empty array as default... viable solution?
     }
 
-    public String getOutputString() {
+    public String getOutput() {
         String output = "";
-        output = getCustomerFullName() + "\n";
-        output += LineItem.getOutputHeaders();
+        output = customer.getFullName() + "\n";
+        output += LineItem.getOutputHeader();
         for (LineItem li : lineItems) {
-            output += li.getOutputString();
+            output += li.getLineOutput();
         }
 
         return output;
@@ -26,14 +26,8 @@ public class Receipt {
     }
 
     public void addItem(LineItem lineItem) {
-        if(lineItems == null || lineItems.length == 0){
-            lineItems = new LineItem[]{lineItem};
-            //System.out.println(lineItems.length);//debug
-        } else{
-            lineItems = Arrays.copyOf(lineItems, lineItems.length+1);
-            //System.out.println(lineItems.length);//debug
-            lineItems[lineItems.length - 1] = lineItem;
-        }
+        lineItems = Arrays.copyOf(lineItems, lineItems.length+1);
+        lineItems[lineItems.length - 1] = lineItem;
         
     }
 

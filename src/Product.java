@@ -1,27 +1,24 @@
 
 public class Product {
     private String id;
-    private int quantity;
     private double unitCost;
     private String name;
     private String description;
     private DiscountStrategy discount;
 
-    public Product(String id, int quantity, double unitCost, String name, String description, DiscountStrategy discount) {
+    public Product(String id, String name, double unitCost, DiscountStrategy discount) {
         this.id = id;
-        this.quantity = quantity;
         this.unitCost = unitCost;
         this.name = name;
         this.description = description;
         this.discount = discount;
     }
     
-    public Product(String id, int quantity){
+    public Product(String id){
         this.id = id;
-        this.quantity = quantity;
     }
     
-    public double getDiscountAmount(){
+    public double getDiscountAmount(int quantity){
         if(discount != null){
             return discount.getDiscountAmount(unitCost, quantity);
         } else{
@@ -37,13 +34,7 @@ public class Product {
         this.id = id;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
+    
 
     public double getUnitCost() {
         return unitCost;

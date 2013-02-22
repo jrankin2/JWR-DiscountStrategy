@@ -15,11 +15,15 @@ public class CashRegister {
     }
     
     public void finalizeSale(){
-        System.out.println(getReceipt().getOutputString());
+        outputToConsole();
     }
     
     public Receipt getReceipt(){
         return receipt;
+    }
+    
+    public void outputToConsole(){
+        System.out.println(getReceipt().getOutput());
     }
 
 }
