@@ -9,6 +9,11 @@ public class LineItem {
         this.quantity = quantity;
     }
     
+    public LineItem(Product product, int quantity){
+        this.product = product;
+        this.quantity = quantity;
+    }
+    
     @Override
     public String toString(){
         return "";
@@ -33,13 +38,21 @@ public class LineItem {
                 getQuantity(), 
                 getUnitCost(), 
                 getDiscountAmount(),
-                getLineTotalCost()
+                getTotalCost()
                 );
         return output;
     }
     
-    public double getLineTotalCost(){
+    public double getTotalCost(){
         return (product.getUnitCost()*getQuantity()) - product.getDiscountAmount(quantity);
+    }
+    
+    public double getDiscountAmount(){
+        return product.getDiscountAmount(quantity);
+    }
+    
+    public double getSubTotal(){
+        return getTotalCost() - getDiscountAmount();
     }
     
     public String getId(){
@@ -82,15 +95,9 @@ public class LineItem {
         product.setDescription(description);
     }
     
-    public double getDiscountAmount(){
-        return product.getDiscountAmount(quantity);
-    }
-    
     public void setDiscount(DiscountStrategy discount){
         product.setDiscount(discount);
     }
     
-    
-
 }
 

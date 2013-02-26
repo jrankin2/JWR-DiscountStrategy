@@ -1,17 +1,26 @@
 
 public class CashRegister {
     private Receipt receipt;
+    private InformationStrategy db;
     
-    public CashRegister () {
-        //I feel like this should also be composed of a sale object...
+    public CashRegister (InformationStrategy db) {
+        this.db = db;
     }
     
     public void startNewSale(String customerId){
-        receipt = new Receipt(customerId);
+        Customer customer = db.findCustomer(customerId);
+        if(customer != null){
+            receipt = new Receipt(customer);
+        } else{
+            receipt = new Receipt(customerId);
+        }
     }
     
     public void addItemToSale(String productId, int quantity){
-        receipt.addItem(productId, quantity);
+        Product product = db.findProduct(productId);
+        if(product != null){
+            receipt.addItem(new LineItem(product, quantity));//so receipt doesn't have to know about product
+        }
     }
     
     public void finalizeSale(){

@@ -10,7 +10,6 @@ public class Product {
         this.id = id;
         this.unitCost = unitCost;
         this.name = name;
-        this.description = description;
         this.discount = discount;
     }
     
@@ -33,9 +32,7 @@ public class Product {
     public void setId(String id) {
         this.id = id;
     }
-
     
-
     public double getUnitCost() {
         return unitCost;
     }

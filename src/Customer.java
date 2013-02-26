@@ -4,8 +4,14 @@ public class Customer {
     private String firstName;
     private String lastName;
     
-    public Customer (String id) {
+    public Customer(String id) {
         this.id = id;
+    }
+    
+    public Customer(Customer c){
+        this.id = c.getId();
+        this.firstName = c.getFirstName();
+        this.lastName = c.getLastName();
     }
 
     public Customer(String id, String firstName, String lastName) {
