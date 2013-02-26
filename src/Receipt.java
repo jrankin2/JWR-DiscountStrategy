@@ -34,15 +34,24 @@ public class Receipt {
     }
     
     public final void addItem(String productId, int quantity) {
+        if(productId == null || quantity < 0){//validation
+            throw new IllegalArgumentException();
+        }
         this.addItem(new LineItem(productId, quantity));
     }
 
     public final void addItem(LineItem lineItem) {
+        if(lineItem == null){//validation
+            throw new IllegalArgumentException();
+        }
         lineItems = Arrays.copyOf(lineItems, lineItems.length+1);
         lineItems[lineItems.length - 1] = lineItem;
     }
 
     public final void addItems(LineItem newLineItems[]) {
+        if(newLineItems == null || newLineItems.length == 0){//validation
+            throw new IllegalArgumentException();
+        }
         int len = lineItems.length;
         //System.out.println("len = " + len);
         //System.out.println("ll+nl=" + (lineItems.length + newLineItems.length));
@@ -57,6 +66,9 @@ public class Receipt {
     }
 
     public final void setCustomer(Customer customer) {
+        if(customer == null){//validation
+            throw new IllegalArgumentException();
+        }
         this.customer = customer;
     }
     
@@ -65,6 +77,9 @@ public class Receipt {
     }
     
     public final void setFormat(FormatStrategy format){
+        if(format == null){//validation
+            throw new IllegalArgumentException();
+        }
         this.format = format;
     }
 
@@ -77,6 +92,9 @@ public class Receipt {
     }
 
     public final void setLineItems(LineItem[] lineItems) {
+        if(lineItems == null){//validation
+            throw new IllegalArgumentException();
+        }
         this.lineItems = lineItems;
     }
 }

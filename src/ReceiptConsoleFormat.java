@@ -12,13 +12,19 @@ public class ReceiptConsoleFormat implements FormatStrategy {
         
     }
     
-    
-    
     public String formatReceipt(Receipt receipt) {
+        if(receipt == null){//validation
+            throw new IllegalArgumentException();
+        }
+        
         return getOutput(receipt);
     }
     
     public final String getOutput(Receipt receipt) {
+        if(receipt == null){//validation
+            throw new IllegalArgumentException();
+        }
+        
         double savings = 0, 
                 subtotal = 0,
                 total = 0;
@@ -43,6 +49,10 @@ public class ReceiptConsoleFormat implements FormatStrategy {
     }
     
     public final String getLineOutput(LineItem li){
+        if(li == null){//validation
+            throw new IllegalArgumentException();
+        }
+        
         String output = String.format("%1$-8s %2$-20s %3$-8d %4$-8.02f %5$-8.02f %6$-8.02f\n", 
                 li.getId(), 
                 li.getName(), 

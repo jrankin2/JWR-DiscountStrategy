@@ -7,6 +7,9 @@ public class Product {
     private DiscountStrategy discount;
 
     public Product(String id, String name, double unitCost, DiscountStrategy discount) {
+        if(id == null || name == null || unitCost < 0 || discount == null){//validation
+            throw new IllegalArgumentException();
+        }
         this.id = id;
         this.unitCost = unitCost;
         this.name = name;
@@ -14,10 +17,17 @@ public class Product {
     }
     
     public Product(String id){
+        if(id == null){//validation
+            throw new IllegalArgumentException();
+        }
         this.id = id;
     }
     
     public final double getDiscountAmount(int quantity){
+        if(quantity < 0){//validation
+            throw new IllegalArgumentException();
+        }
+        
         if(discount != null){
             return discount.getDiscountAmount(unitCost, quantity);
         } else{
@@ -30,6 +40,10 @@ public class Product {
     }
 
     public final void setId(String id) {
+        if(id == null){//validation
+            throw new IllegalArgumentException();
+        }
+        
         this.id = id;
     }
     
@@ -38,6 +52,10 @@ public class Product {
     }
 
     public final void setUnitCost(double unitCost) {
+        if(unitCost < 0){//validation
+            throw new IllegalArgumentException();
+        }
+        
         this.unitCost = unitCost;
     }
 
@@ -46,6 +64,10 @@ public class Product {
     }
 
     public final void setName(String name) {
+        if(name == null){//validation
+            throw new IllegalArgumentException();
+        }
+        
         this.name = name;
     }
 
@@ -54,6 +76,10 @@ public class Product {
     }
 
     public final void setDescription(String description) {
+        if(description == null){//validation
+            throw new IllegalArgumentException();
+        }
+        
         this.description = description;
     }
 
@@ -62,6 +88,10 @@ public class Product {
     }
 
     public final void setDiscount(DiscountStrategy discount) {
+        if(discount == null){//validation
+            throw new IllegalArgumentException();
+        }
+        
         this.discount = discount;
     }
     

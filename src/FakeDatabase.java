@@ -15,6 +15,9 @@ public class FakeDatabase implements InformationStrategy{
     // Find a customer in the array by its id.
     // Returns null if not found.
     public final Customer findCustomer(final String custId) {
+        if(custId == null){
+            throw new IllegalArgumentException();
+        }
         Customer customer = null;
         for (Customer c : customers) {
             if (custId.equals(c.getId())) {
@@ -29,6 +32,9 @@ public class FakeDatabase implements InformationStrategy{
     // Find a product in the array by its id.
     // Returns null if not found.
     public final Product findProduct(final String prodId) {
+        if(prodId == null){
+            throw new IllegalArgumentException();
+        }
         Product product = null;
         for (Product p : products) {
             if (prodId.equals(p.getId())) {

@@ -12,6 +12,10 @@ public class CashRegister {
     }
     
     public final void startNewSale(String customerId){
+        if(customerId == null){//validation
+            throw new IllegalArgumentException();
+        }
+        
         Customer customer = db.findCustomer(customerId);
         if(customer != null){
             receipt = new Receipt(customer);
@@ -21,6 +25,10 @@ public class CashRegister {
     }
     
     public final void startNewSale(String customerId, FormatStrategy format){
+        if(customerId == null || format == null){//validation
+            throw new IllegalArgumentException();
+        }
+        
         Customer customer = db.findCustomer(customerId);
         if(customer != null){
             receipt = new Receipt(customer, format);
@@ -30,6 +38,9 @@ public class CashRegister {
     }
     
     public final void addItemToSale(String productId, int quantity){
+        if(productId == null || quantity < 0){//validation
+            throw new IllegalArgumentException();
+        }
         Product product = db.findProduct(productId);
         if(product != null){
             receipt.addItem(new LineItem(product, quantity));//so receipt doesn't have to know about product
@@ -45,7 +56,6 @@ public class CashRegister {
     }
     
     public final void outputToConsole(){
-        
         System.out.println(getReceipt().getOutput());
     }
 
