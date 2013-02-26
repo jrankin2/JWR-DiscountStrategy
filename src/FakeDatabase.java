@@ -1,4 +1,3 @@
-
 public class FakeDatabase implements InformationStrategy{
     
     private Customer[] customers = {

@@ -1,7 +1,7 @@
-public interface InformationStrategy extends CustomerInformationStrategy, ProductInformationStrategy {
+public interface InformationStrategy {
     
-    //public abstract Product findProduct(String productId);
+    public abstract Product findProduct(String productId);
     
-    //public abstract Customer findCustomer(String customerId);
+    public abstract Customer findCustomer(String customerId);
     
 }

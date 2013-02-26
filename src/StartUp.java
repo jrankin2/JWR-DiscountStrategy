@@ -3,14 +3,12 @@ public class StartUp {
 
     public static void main(String[] args) {
         
-        
         CashRegister cashRegister = new CashRegister(new FakeDatabase());
-        cashRegister.startNewSale("C200");
+        cashRegister.startNewSale("C200", new ReceiptConsoleFormat());
         cashRegister.addItemToSale("A101", 2);
         cashRegister.addItemToSale("A102", 1);
         
         cashRegister.finalizeSale();
-        
         
     }
 

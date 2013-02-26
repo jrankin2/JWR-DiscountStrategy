@@ -4,15 +4,15 @@
 public class NoDiscount implements DiscountStrategy{
     private double discountRate;
     
-    public double getDiscountAmount(double unitCost, int quantity) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public final double getDiscountAmount(double unitCost, int quantity) {
+        return 0;
     }
     
-    public double getDiscountRate() {
+    public final double getDiscountRate() {
         return discountRate;
     }
 
-    public void setDiscountRate(double discountRate) {
+    public final void setDiscountRate(double discountRate) {
         this.discountRate = discountRate;
     }
 

@@ -7,15 +7,24 @@ public class VariableRateDiscount implements DiscountStrategy {
         this.discountRate = discountRate;
     }
     
-    public double getDiscountAmount(double unitCost, int quantity) {
+    public final double getDiscountAmount(double unitCost, int quantity) {
+        if(unitCost < 0){
+            throw new IllegalArgumentException("Unit Cost cannot be negative.");
+        } else if(quantity < 0){
+            throw new IllegalArgumentException("Quantity cannot be negative.");
+        }
+        
         return unitCost*quantity*discountRate;
     }
 
-    public double getDiscountRate() {
+    public final double getDiscountRate() {
         return discountRate;
     }
 
-    public void setDiscountRate(double discountRate) {
+    public final void setDiscountRate(double discountRate) {
+        if(discountRate < 0){
+            throw new IllegalArgumentException("Discount Rate cannot be negative.");
+        }
         this.discountRate = discountRate;
     }
     
