@@ -1,4 +1,9 @@
-
+/**
+ * Contains a product id, its cost, name, description, and a discount that is
+ * to be applied to this product.
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class Product {
     private String id;
     private double unitCost;

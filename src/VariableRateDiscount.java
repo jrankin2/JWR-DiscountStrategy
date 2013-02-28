@@ -1,4 +1,9 @@
-
+/**
+ * Class that returns the discount amount when passed a unitCost and quantity.
+ * Also stores a discount rate which is used to calculate discount amount.
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class VariableRateDiscount implements DiscountStrategy {
 
     private double discountRate;

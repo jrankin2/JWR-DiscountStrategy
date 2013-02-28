@@ -1,4 +1,8 @@
-
+/**
+ * Cash Register
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class CashRegister {
     private Receipt receipt;
     private InformationStrategy db;

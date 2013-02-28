@@ -1,4 +1,10 @@
-
+/**
+ * Contains the discount rate and minimum quantity needed for the discount to
+ * be applied to a product.
+ * Used to retrieve the discount amount for a product.
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class QuantityDiscount implements DiscountStrategy {
 
     private double discountRate;

@@ -1,6 +1,9 @@
-
 import java.util.Date;
-
+/**
+ * Formats the receipt to be output to the console.
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class ReceiptConsoleFormat implements FormatStrategy {
     Receipt receipt;
     
@@ -31,7 +34,7 @@ public class ReceiptConsoleFormat implements FormatStrategy {
         
         String output = "Thank you for shopping at Kohl's!\n\n";
         output += "Sold to: " + receipt.getCustomer().getFullName() + "\n";
-        output += "Date: " + new Date().toString() + "\n\n";
+        output += "Date: " + receipt.getDateString() + "\n\n";
         output += getLineItemsHeader();
         for (LineItem li : receipt.getLineItems()) {
             output += getLineOutput(li);//output each line

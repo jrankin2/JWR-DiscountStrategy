@@ -1,5 +1,7 @@
 /**
- * @author Joe
+ * DiscountStrategy implementation that always has a 0 discount amount.
+ * @version 1.0
+ * @author Joe Rankin
  */
 public class NoDiscount implements DiscountStrategy{
     private double discountRate;

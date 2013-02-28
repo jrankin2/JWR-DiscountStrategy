@@ -1,15 +1,27 @@
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
+/**
+ * Contains Customer, LineItem, and Formatting information used to create a
+ * receipt.
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class Receipt {
 
     private Customer customer;
     private LineItem lineItems[];
     private FormatStrategy format;
+    private Date receiptDate;
 
     public Receipt(String customerId) {
+        if(customerId == null){
+            throw new IllegalArgumentException();
+        }
         setCustomer(new Customer(customerId));
         setLineItems(new LineItem[0]);//pass in an empty LineItem array as default...
+        this.receiptDate = new Date();
     }
     
     public Receipt(Customer customer){
@@ -18,6 +30,7 @@ public class Receipt {
         }
         setCustomer(customer);
         setLineItems(new LineItem[0]);
+        this.receiptDate = new Date();
     }
     
     public Receipt(Customer customer, FormatStrategy format){
@@ -27,6 +40,12 @@ public class Receipt {
         setCustomer(customer);
         setFormat(format);
         setLineItems(new LineItem[0]);
+        this.receiptDate = new Date();
+    }
+    
+    public String getDateString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy h:mm a");
+        return sdf.format(receiptDate);
     }
     
     public String getOutput(){

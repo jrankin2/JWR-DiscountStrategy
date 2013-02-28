@@ -1,4 +1,8 @@
-
+/**
+ * Has a customer id, first name and last name.
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class Customer {
     private String id;
     private String firstName;

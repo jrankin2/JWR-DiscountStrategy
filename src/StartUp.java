@@ -1,4 +1,8 @@
-
+/**
+ * Startup class to demonstrate the program in action.
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class StartUp {
 
     public static void main(String[] args) {

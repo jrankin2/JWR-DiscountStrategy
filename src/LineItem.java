@@ -1,4 +1,10 @@
-
+/**
+ * Contains a product and quantity, and provides a way to get the total cost,
+ * subtotal, discount amount, unit cost, product, quantity, and name of the
+ * product.
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class LineItem {
     
     private Product product;
@@ -19,10 +25,6 @@ public class LineItem {
         this.product = product;
         this.quantity = quantity;
     }
-    
-    
-    
-    
     
     public final double getTotalCost(){
         return (product.getUnitCost()*getQuantity()) - product.getDiscountAmount(quantity);

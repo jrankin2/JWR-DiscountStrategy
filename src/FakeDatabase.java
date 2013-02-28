@@ -1,3 +1,9 @@
+/**
+ * Provides a way to find customers from a customer id input, and products from
+ * a product id input.
+ * @version 1.0
+ * @author Joe Rankin
+ */
 public class FakeDatabase implements InformationStrategy{
     
     private Customer[] customers = {
