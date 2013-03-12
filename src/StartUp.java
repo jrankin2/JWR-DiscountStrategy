@@ -9,7 +9,7 @@ public class StartUp {
         
         CashRegister cashRegister = new CashRegister(new FakeDatabase());
         cashRegister.startNewSale("C200", new ReceiptConsoleFormat());
-        cashRegister.addItemToSale("A101", 2);
+        cashRegister.addItemToSale("A101", 1);
         cashRegister.addItemToSale("A102", 1);
         
         cashRegister.finalizeSale();

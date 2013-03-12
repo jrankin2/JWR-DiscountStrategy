@@ -46,6 +46,11 @@ public class QuantityDiscount implements DiscountStrategy {
         }
         this.minQuantity = minQuantity;
     }
+
+    @Override
+    public String toString() {
+        return "QuantityDiscount{" + "discountRate=" + discountRate + ", minQuantity=" + minQuantity + '}';
+    }
     
 }
 

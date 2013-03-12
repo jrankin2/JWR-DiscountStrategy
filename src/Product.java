@@ -99,6 +99,11 @@ public class Product {
         
         this.discount = discount;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + id + ", unitCost=" + unitCost + ", name=" + name + ", description=" + description + ", discount=" + discount + '}';
+    }
     
     
 }

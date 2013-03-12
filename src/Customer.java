@@ -1,5 +1,5 @@
 /**
- * Has a customer id, first name and last name.
+ * Has a customer id, first name and last name, represents a customer.
  * @version 1.0
  * @author Joe Rankin
  */

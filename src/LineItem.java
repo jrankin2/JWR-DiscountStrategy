@@ -99,6 +99,12 @@ public class LineItem {
         }
         product.setDiscount(discount);
     }
+
+    @Override
+    public String toString() {
+        return "LineItem{" + "product=" + product + ", quantity=" + quantity + '}';
+    }
+    
     
 }
 

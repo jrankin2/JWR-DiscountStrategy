@@ -30,6 +30,11 @@ public class VariableRateDiscount implements DiscountStrategy {
         }
         this.discountRate = discountRate;
     }
+
+    @Override
+    public String toString() {
+        return "VariableRateDiscount{" + "discountRate=" + discountRate + '}';
+    }
     
 }
 

@@ -24,4 +24,9 @@ public class NoDiscount implements DiscountStrategy{
         this.discountRate = discountRate;
     }
 
+    @Override
+    public String toString() {
+        return "NoDiscount{" + "discountRate=" + discountRate + '}';
+    }
+    
 }

@@ -1,5 +1,6 @@
 /**
- * Cash Register
+ * Cash Register handles the input and output of the program, finds the customers
+ * and products, and gives them to the Receipt.
  * @version 1.0
  * @author Joe Rankin
  */
